@@ -6,7 +6,7 @@ Aim
      EMU00020882.nxs 
      
   into python without compiling any os-dependent code.
-  (nexusformat reader.py from `<https://github.com/nexusformat>`_ is broken on in python3)
+  (nexusformat reader.py from `<https://github.com/nexusformat/python-nxs>`_ is broken on in python3)
 
 Requisites for the hack
 =======================
