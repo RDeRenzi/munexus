@@ -1,4 +1,4 @@
-NeXus hack for a very limited 
+NeXus hack for a very limited access to the library
 
 Aim
 ===

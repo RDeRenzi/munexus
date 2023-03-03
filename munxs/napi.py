@@ -1278,7 +1278,7 @@ class NeXus(object):
         ID = _NXlink()
         status = nxlib.nxigetgroupid_(self.handle,_ref(ID))
         if status == ERROR:
-            raise NeXusError("Could not link to group: %s" % (self._loc()))
+            raise NeXusError("Could not link to group: %s" % (self._loc()))# RDR
         return ID
 
     nxlib.nxigetdataid_.restype = c_int
