@@ -612,7 +612,7 @@ class NXattr(object):
         if isinstance(value, NXattr):
             self._data,self._dtype = value.nxdata,value.dtype
         elif dtype:
-            if dtype in np.typeDict:
+            if dtype in np.sctypeDict:
                 self._data,self._dtype = np.__dict__[dtype](value),dtype
             elif dtype == 'char':
                 self._data,self._dtype = str(value),dtype
@@ -1232,7 +1232,7 @@ class NXfield(NXobject):
         self._dtype = dtype
         if dtype == 'char':
             self._dtype = 'char'
-        elif dtype in np.typeDict:
+        elif dtype in np.sctypeDict:
             self._dtype = np.dtype(dtype)
         elif dtype:
             raise NeXusError("Invalid data type: %s" % dtype)
@@ -1525,7 +1525,7 @@ class NXfield(NXobject):
                 self._dtype = dtype
                 if dtype == 'char':
                     self._dtype = 'char'
-                elif dtype in np.typeDict:
+                elif dtype in np.sctypeDict:
                     self._dtype = np.dtype(dtype)
                 self._infile = self._saved = self._changed = True
         else:
@@ -1711,7 +1711,7 @@ class NXfield(NXobject):
                 self._shape = (len(self._value),)
                 self._dtype = 'char'
             else:
-                if self.dtype in np.typeDict:
+                if self.dtype in np.sctypeDict:
                     self._value = np.array(value,self.dtype)
                 else:
                     self._value = np.array(value)
